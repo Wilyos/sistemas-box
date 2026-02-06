@@ -13,7 +13,7 @@ export const sendOrderNotification = async (orderData) => {
       }
     });
 
-    // Formatear productos
+    // Formatear productos s
     const productsHtml = orderData.items?.map(item => `
       <tr>
         <td style="padding: 10px; border-bottom: 1px solid #eee;">${item.name}</td>
