@@ -23,7 +23,7 @@ const WOMPI_PUBLIC_KEY = process.env.WOMPI_PUBLIC_KEY;
 const WOMPI_PRIVATE_KEY = process.env.WOMPI_PRIVATE_KEY;
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const RESEND_FROM = process.env.RESEND_FROM;
-const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
+const FRONTEND_URL = process.env.FRONTEND_URL || 'https://empaques-sistemas-litograficos.vercel.app';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

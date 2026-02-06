@@ -238,8 +238,6 @@ Fecha: ${new Date().toLocaleString('es-CO')}
       return;
     }
 
-    const wompiWindow = window.open('', '_blank', 'noopener,noreferrer');
-
     setIsProcessing(true);
 
     try {
@@ -310,19 +308,21 @@ Fecha: ${new Date().toLocaleString('es-CO')}
 
       console.log('✅ Link generado:', data);
 
-      // Abrir checkout de Wompi en una pestaña nueva
+      // Abrir checkout de Wompi en una ventana nueva
       if (data.checkout_url) {
-        console.log('🔗 Abriendo Wompi en pestaña nueva...');
+        console.log('🔗 Abriendo Wompi...');
+        const wompiWindow = window.open(data.checkout_url, '_blank', 'noopener,noreferrer');
+        
         if (wompiWindow) {
-          wompiWindow.location.href = data.checkout_url;
-          setToastMessage('Se abrió Wompi en una nueva pestaña. Completa el pago y regresa aquí.');
+          setToastMessage('Se abrió Wompi en una nueva ventana. Completa el pago y regresa aquí.');
         } else {
-          const confirmRedirect = window.confirm('El navegador bloqueó la pestaña nueva. ¿Deseas abrir el pago en esta pestaña?');
+          // Si el navegador bloqueó el popup
+          const confirmRedirect = window.confirm('El navegador bloqueó la ventana de pago. ¿Deseas abrir el pago en esta pestaña?');
           if (confirmRedirect) {
             window.location.href = data.checkout_url;
             return;
           }
-          alert('Habilita los pop-ups para abrir el pago en una nueva pestaña.');
+          alert('Habilita los pop-ups para abrir el pago en una nueva ventana.');
         }
         setIsProcessing(false);
       } else {
@@ -332,7 +332,6 @@ Fecha: ${new Date().toLocaleString('es-CO')}
       console.error('❌ Error procesando pago:', error);
       alert(`Error: ${error.message}`);
       localStorage.removeItem('pendingOrder');
-      wompiWindow.close();
       setIsProcessing(false);
     }
   };
