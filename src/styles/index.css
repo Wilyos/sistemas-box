@@ -1,0 +1,595 @@
+/* --- Variables de Color y Base --- */
+:root {
+  --primary: #429E52;   /* Verde */
+  --secondary: #258134; /* Menta */
+  --dark: #1A4020;
+  --light: #F9F9F9;
+  
+  /* Proporción Áurea - Serie Fibonacci para tipografía y espaciados */
+  --phi: 1.618;
+  --base-size: 16px;
+  
+  /* Escala tipográfica basada en Fibonacci/Proporción Áurea */
+  --font-xs: 10px;      /* ~16/1.618 */
+  --font-sm: 14px;      /* ~10*1.4 */
+  --font-base: 16px;    /* Base */
+  --font-md: 20px;      /* ~16*1.25 */
+  --font-lg: 26px;      /* 16*1.618 */
+  --font-xl: 42px;      /* 26*1.618 */
+  --font-2xl: 68px;     /* 42*1.618 */
+  
+  /* Espaciados basados en Fibonacci: 8, 13, 21, 34, 55, 89 */
+  --space-xs: 8px;
+  --space-sm: 13px;
+  --space-md: 21px;
+  --space-lg: 34px;
+  --space-xl: 55px;
+  --space-2xl: 89px;
+  --space-3xl: 144px;
+  --space-4xl: 233px;
+  --space-5xl: 377px;
+  --space-6xl: 610px;
+  --space-7xl: 987px;
+}
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  font-family: 'Helvetica Neue', sans-serif; 
+}
+
+body { 
+  background-color: var(--light); 
+  color: var(--dark); 
+  overflow-x: hidden;
+  font-size: var(--font-base);
+}
+
+/* --- Tipografía y Estilos Generales basados en Proporción Áurea --- */
+h1 { 
+  font-weight: 700; 
+  letter-spacing: -1px;
+  font-size: var(--font-2xl); /* 68px = 42*1.618 */
+  line-height: 1.2;
+}
+
+h2 { 
+  font-weight: 700; 
+  letter-spacing: -1px;
+  font-size: var(--font-xl); /* 42px = 26*1.618 */
+  line-height: 1.3;
+}
+
+h3 { 
+  font-weight: 700; 
+  letter-spacing: -0.5px;
+  font-size: var(--font-lg); /* 26px = 16*1.618 */
+  line-height: 1.4;
+}
+
+p { 
+  line-height: 1.618; /* Proporción áurea en interlineado */
+  color: #666;
+  font-size: var(--font-base);
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-lg); /* 13px 34px - Fibonacci */
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--space-lg); /* 34px - Fibonacci */
+  font-weight: 600;
+  font-size: var(--font-md); /* 20px */
+  transition: all 0.3s ease;
+  box-shadow: 0 var(--space-xs) var(--space-md) rgba(66, 158, 82, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover { 
+  transform: translateY(-3px); 
+  box-shadow: 0 var(--space-sm) var(--space-lg) rgba(66, 158, 82, 0.5); 
+}
+
+/* --- Hero Section con espaciados Fibonacci --- */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl) var(--space-2xl); /* 55px 89px - Fibonacci */
+  position: relative;
+  overflow: hidden;
+  margin-top: calc(-1 * (var(--space-md) * 2 + var(--space-xl))); /* Compensar altura del header fijo */
+}
+
+.hero-carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 3rem;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 10px 20px;
+  z-index: 2;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev {
+  left: 20px;
+}
+
+.carousel-btn.next {
+  right: 20px;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 2;
+}
+
+.carousel-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.carousel-dots .dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.carousel-dots .dot.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  transform: scale(1.3);
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-left {
+  flex: 1;
+  text-align: center;
+  max-width: 800px;
+}
+
+.hero-left h1 {
+  font-size: var(--font-xl); /* 42px */
+  margin-bottom: var(--space-lg); /* 34px - Fibonacci */
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+.hero-left p {
+  font-size: var(--font-md); /* 20px */
+  color: #666;
+  margin-bottom: var(--space-xl); /* 55px - Fibonacci */
+  line-height: 1.618; /* Proporción áurea */
+}
+
+.hero-left .btn {
+  background-color: var(--primary);
+  padding: var(--space-md) var(--space-xl); /* 21px 55px - Fibonacci */
+  font-size: var(--font-md); /* 20px */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-top: var(--space-3xl);
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.hero-logo {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--space-md); /* 21px - Fibonacci */
+}
+
+.hero-tagline {
+  font-size: var(--font-base); /* 16px */
+  color: #666;
+  margin-bottom: var(--space-xs); /* 8px - Fibonacci */
+  font-weight: 500;
+}
+
+.hero-brand {
+  font-size: var(--font-sm); /* 14px */
+  color: #999;
+  font-weight: 400;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+    min-height: 80vh;
+    padding: var(--space-xl) var(--space-md); /* 55px 21px - Fibonacci */
+  }
+
+  .carousel-btn {
+    font-size: 2rem;
+    padding: 8px 15px;
+  }
+
+  .carousel-btn.prev {
+    left: 10px;
+  }
+
+  .carousel-btn.next {
+    right: 10px;
+  }
+
+  .carousel-dots {
+    bottom: 20px;
+  }
+
+  .hero-content {
+    padding: var(--space-md);
+  }
+
+  .hero-right {
+    order: 1;
+  }
+
+  .hero-left {
+    order: 2;
+    text-align: center;
+  }
+
+  .hero-left h1 {
+    font-size: var(--font-lg); /* 26px */
+  }
+
+  .hero-left p {
+    font-size: var(--font-base); /* 16px */
+  }
+
+  .hero-left .btn {
+    font-size: var(--font-base); /* 16px */
+    padding: var(--space-sm) var(--space-lg); /* 13px 34px - Fibonacci */
+  }
+
+  .hero-logo {
+    max-width: 200px;
+  }
+
+  .hero-tagline {
+    font-size: 0.9rem;
+  }
+
+  .hero-brand {
+    font-size: 0.8rem;
+  }
+}
+
+/* --- Showcase de Productos (Grid Interactivo) con espaciados Fibonacci --- */
+.products-section { 
+  padding: var(--space-2xl) var(--space-md); /* 89px 21px - Fibonacci */
+  max-width: 1200px; 
+  margin: 0 auto; 
+}
+
+.section-title { 
+  text-align: center; 
+  margin-bottom: var(--space-2xl); /* 89px - Fibonacci */
+  font-size: var(--font-xl); /* 42px - H2 con proporción áurea */
+}
+
+.section-title span { 
+  border-bottom: var(--space-xs) solid var(--secondary); /* 8px - Fibonacci */
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg); /* 34px - Fibonacci */
+}
+
+/* Tarjeta de Producto con espaciados Fibonacci */
+.product-card {
+  background: white;
+  border-radius: var(--space-md); /* 21px - Fibonacci */
+  padding: var(--space-xl); /* 55px - Fibonacci */
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 1;
+  transform: translateY(0);
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card.animate {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-card:hover {
+  border-color: var(--secondary);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+  transform: translateY(-10px);
+}
+
+/* Círculo decorativo animado */
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 100px;
+  height: 100px;
+  background: var(--secondary);
+  border-radius: 50%;
+  opacity: 0.2;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover::before { 
+  transform: scale(5); 
+}
+
+.icon-placeholder {
+  width: var(--space-2xl); /* 89px - Fibonacci */
+  height: var(--space-2xl); /* 89px - Fibonacci */
+  background: #eee; 
+  border-radius: 50%;
+  margin: 0 auto var(--space-md); /* 21px - Fibonacci */
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  font-weight: bold; 
+  color: #aaa; 
+  font-size: var(--font-xl); /* 42px */
+  position: relative; 
+  z-index: 1;
+}
+
+.icon-placeholder.secondary {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.product-card h3 { 
+  margin-bottom: var(--space-sm); /* 13px - Fibonacci */
+  font-size: var(--font-lg); /* 26px - H3 con proporción áurea */
+  position: relative; 
+  z-index: 1; 
+}
+
+.product-card p { 
+  font-size: var(--font-sm); /* 14px */
+  margin-bottom: var(--space-md); /* 21px - Fibonacci */
+  line-height: 1.618; /* Proporción áurea */
+  position: relative; 
+  z-index: 1; 
+}
+
+.product-link {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+}
+
+.product-link:hover { 
+  text-decoration: underline; 
+}
+
+/* Modal de Detalles del Producto */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: white;
+  border-radius: var(--space-md); /* 21px - Fibonacci */
+  padding: var(--space-xl); /* 55px - Fibonacci */
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--space-md); /* 21px - Fibonacci */
+  right: var(--space-md); /* 21px - Fibonacci */
+  background: none;
+  border: none;
+  font-size: var(--font-lg); /* 26px */
+  cursor: pointer;
+  color: var(--dark);
+}
+
+.modal-close:hover {
+  color: var(--primary);
+}
+
+.modal-icon {
+  width: var(--space-2xl); /* 89px - Fibonacci */
+  height: var(--space-2xl); /* 89px - Fibonacci */
+  background: #eee;
+  border-radius: 50%;
+  margin: 0 auto var(--space-md); /* 21px - Fibonacci */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #aaa;
+  font-size: var(--font-xl); /* 42px */
+}
+
+.modal-icon.secondary {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.modal-info {
+  display: flex;
+  justify-content: space-around;
+  margin: var(--space-lg) 0; /* 34px - Fibonacci */
+  padding: var(--space-md); /* 21px - Fibonacci */
+  background: var(--light);
+  border-radius: var(--space-sm); /* 13px - Fibonacci */
+}
+
+.modal-info-item {
+  text-align: center;
+}
+
+.modal-info-item label {
+  display: block;
+  font-size: var(--font-xs); /* 10px */
+  color: #999;
+  margin-bottom: var(--space-xs); /* 8px - Fibonacci */
+}
+
+.modal-info-item strong {
+  display: block;
+  font-size: var(--font-md); /* 20px */
+  color: var(--dark);
+}
+
+/* --- Footer con espaciados Fibonacci --- */
+footer { 
+  text-align: center; 
+  padding: var(--space-xl); /* 55px - Fibonacci */
+  background: white; 
+  margin-top: var(--space-2xl); /* 89px - Fibonacci */
+  border-top: var(--space-xs) solid var(--secondary); /* 8px - Fibonacci */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .hero h1 { 
+    font-size: var(--font-xl); /* 42px */
+  }
+  
+  .section-title {
+    font-size: var(--font-lg); /* 26px */
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    padding: var(--space-lg) var(--space-md); /* 34px 21px - Fibonacci */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

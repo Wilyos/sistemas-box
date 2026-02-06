@@ -1,0 +1,1250 @@
+[
+  {
+    "id": 1,
+    "name": "Alitas Especial",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍗",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "24x16x8 cm",
+    "images": ["/products/alitas-especial.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Alitas Pequeñas",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍗",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "24x16x5 cm",
+    "images": ["/products/alitas-pequeñas.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Almuerzo",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍱",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "26x18x4 cm",
+    "images": ["/products/almuerzo.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Bonsai",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "📦",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "22.5x11x9 cm",
+    "images": ["/products/bonsai.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Broaster",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍗",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "26x18x7 cm",
+    "images": ["/products/broaster.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Burguer Combo",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍔",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "22x12x8.5 cm",
+    "images": ["/products/burguer combo.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Burguer Big",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍔",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "15x15x10 cm",
+    "images": ["/products/burguer-big.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Burguer Pro",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍔",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "12x8x12 cm",
+    "images": ["/products/burguer-pro.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Caja J1",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "📦",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "18x12x11 cm",
+    "images": ["/products/caja-j1.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Cheese Cake",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍰",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "11x10x5 cm",
+    "images": ["/products/cheese-cake.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Combo Alto",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍔",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "19.5x12.5x11 cm",
+    "images": ["/products/combo alto.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Cono 2 Salseros",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍟",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "22x12 cm",
+    "images": ["/products/cono-2-salseros.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Cono Broche",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍟",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "21x16x12 cm",
+    "images": ["/products/cono-broche.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Cono Churros",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍩",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "22x15 cm",
+    "images": ["/products/cono-churros.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Cono Fries",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍟",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "23x12 cm",
+    "images": ["/products/cono-fries.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Cono Snacks",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍟",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "23x14 cm",
+    "images": ["/products/cono-snacks.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Cono Waffles",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🧇",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "17x14.5 cm",
+    "images": ["/products/cono-waffles.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Cono Zona",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍟",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "26x16.5 cm",
+    "images": ["/products/cono-zona.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Contenedor Naty",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "📦",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "14x19x6 cm",
+    "images": ["/products/contenedor-naty.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Donas Familiar",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍩",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "60x10.5x5 cm",
+    "images": ["/products/donas-familiar.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Empanadas",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🥟",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "19x14x5 cm",
+    "images": ["/products/empanadas.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Frisnacks 12 Onzas",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🥤",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "22x17x12 cm",
+    "images": ["/products/frisnacks-12onzas.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Frisnacks 14 Onzas",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🥤",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "",
+    "images": ["/products/frisnacks-14onzas.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Frisnacks 16 Onzas",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🥤",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "18x14x24 cm",
+    "images": ["/products/frisnacks-16onzas.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Hamburguesa Bandeja",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍔",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "12x15x10 cm",
+    "images": ["/products/hamburguesa-bandeja.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Hamburguesa Especial",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍔",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "13x16x9 cm",
+    "images": ["/products/hamburguesa-especial.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Hamburguesa Sencilla",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍔",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "12x12x8.5 cm",
+    "images": ["/products/hamburguesa-Sencilla.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Individuales",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "📄",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "",
+    "images": ["/products/individuales.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Lechona 300gr",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🥘",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "16x10x4 cm",
+    "images": ["/products/lechona-300gr.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Lechona 400gr",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🥘",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "16x10x6 cm",
+    "images": ["/products/lechona-400gr.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Lechona 600gr",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🥘",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "16x8x10 cm",
+    "images": ["/products/lechona-600gr.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Lechona Alta",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🥘",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "15x12x5 cm",
+    "images": ["/products/lechona-alta.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Maletín Buñuelos 2",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🎒",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "23.511.5x7 cm",
+    "images": ["/products/maletin-buñuelos-2.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Maletín Buñuelos",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🎒",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "22.5x11.5x9 cm",
+    "images": ["/products/maletin-buñuelos.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Maletín Medio Pollo",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🎒",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "19x10.5x9x9.5 cm",
+    "images": ["/products/maletin-medio-pollo.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Maletín Perro",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🎒",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "18x6x5 cm",
+    "images": ["/products/maletin-perro.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Maletín Pollo",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🎒",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "21x12.5x13 cm",
+    "images": ["/products/maletin-pollo.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Medio Pollo",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍗",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "18x12.5x6",
+    "images": ["/products/medio-pollo.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Mega Caja",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "📦",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "35x30x10 cm",
+    "images": ["/products/mega-caja.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Mini Buñuelos",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🥯",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "6.5x5x10.5 cm",
+    "images": ["/products/mini-buñuelos.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Mini Caja",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "📦",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "11x11.5x6 cm",
+    "images": ["/products/mini-caja.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Multifuncional",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "📦",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "19.5x15.5x7.5 cm",
+    "images": ["/products/multifuncional.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Papas Mesa",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍟",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "8x8 cm",
+    "images": ["/products/papas-mesa.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Papel Parafinado",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "📄",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "",
+    "images": ["/products/papel-parafinado.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Perro Especial",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🌭",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "20x8.5x8 cm",
+    "images": ["/products/perro-especial.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Perro Sencillo",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🌭",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "20x7x7 cm",
+    "images": ["/products/perro-sencillo.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Pescado",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🐟",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "36x18x6 cm",
+    "images": ["/products/pescado.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Picada Grande",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍖",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "28x19x8 cm",
+    "images": ["/products/picada-grande.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Pizza Personal",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍕",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "17x20 cm",
+    "images": ["/products/pizza-personal.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Pizza",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍕",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "",
+    "images": ["/products/pizza.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Plato 1",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍽️",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "15x13x4.5 cm",
+    "images": ["/products/plato-1.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Plato 2",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍽️",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "23x14.5x5 cm",
+    "images": ["/products/plato-2.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Plato 3",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍽️",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "16.5x10x5 cm",
+    "images": ["/products/plato-3.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Plato 4",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍽️",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "14x10.5x6 cm",
+    "images": ["/products/plato-4.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Plato Arepas Rellenas",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍽️",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "14x5x14 cm",
+    "images": ["/products/plato-arepas-rellenas.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Plato Fries",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍽️",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "12x12x12 cm",
+    "images": ["/products/plato-fries.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Plato Lechona",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍽️",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": " 11x12x4 cm",
+    "images": ["/products/plato-lechona.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Plato Master",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍽️",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "19x13.5x6 cm",
+    "images": ["/products/plato-master.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Plato Ovalo",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍽️",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "21x12.5x5 cm",
+    "images": ["/products/plato-ovalo.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Plato Pollo",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍽️",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "30x18x5 cm",
+    "images": ["/products/plato-pollo.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Plato Santo",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍽️",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "13.5x11.5x9.5 cm",
+    "images": ["/products/plato-santo.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Plato",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍽️",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "14x10x15 cm",
+    "images": ["/products/plato.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Pollo y Medio Maletín",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🎒",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "15x10x10 cm",
+    "images": ["/products/pollo-y-medio-maletin.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Pollo y Medio",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍗",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "17.5x13x14.5 cm",
+    "images": ["/products/pollo-y-medio.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Ponque",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍰",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "",
+    "images": ["/products/ponque.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 66,
+    "name": "Porta Arepas 1",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🥙",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "14x5x8 cm",
+    "images": ["/products/porta-arepas-1.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Porta Arepas 2",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🥙",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "133x5x8.5 cm",
+    "images": ["/products/porta-arepas-2.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Porta Papas",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍟",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "6x3x10 cm",
+    "images": ["/products/porta-papas.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Porta Perros",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🌭",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "17x5.5x4 cm",
+    "images": ["/products/porta-perros.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Porta Pizza",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍕",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "18x17 cm",
+    "images": ["/products/porta-pizza.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Salchipapas",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍟",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "20x11x5 cm",
+    "images": ["/products/salchipapas.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Sushi 2",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍱",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "23x10x5 cm",
+    "images": ["/products/sushi-grande.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Sushi",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🍱",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "",
+    "images": ["/products/sushi.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Wok 1000gr",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🥡",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "13x12x13 cm",
+    "images": ["/products/wok-1000gr.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Wok 1500gr",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🥡",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "14x13.5x14 cm",
+    "images": ["/products/wok-1500gr.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Wok 500gr",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🥡",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "9x11x9.5 cm",
+    "images": ["/products/wok-500gr.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Wok 600gr",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "🥡",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "11x10x11",
+    "images": ["/products/wok-600gr.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Crepes",
+    "description": "Papel: Kraft o Maulle.",
+    "icon": "",
+    "color": "primary",
+    "basePriceOneColor": 0,
+    "priceColor": 0,
+    "material": "Cartón biodegradable",
+    "dimensions": "18.5x18.5x7.5 cm",
+    "images": ["/products/crepes.png"],
+    "paperTypes": [
+      { "id": "paper1", "name": "Kraft", "label": "Kraft - Estándar" },
+      { "id": "paper2", "name": "Maulle", "label": "Maulle - Premium" }
+    ]
+  }
+]

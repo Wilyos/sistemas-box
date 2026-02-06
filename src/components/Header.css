@@ -1,0 +1,69 @@
+.header {
+  background: #437442;
+  border-bottom: 1px solid #c8e6c9;
+  padding: var(--space-md) 0; /* 21px - Fibonacci */
+  sticky: top;
+  z-index: 100;
+  position: sticky;
+  top: 0;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md); /* 21px - Fibonacci */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  font-size: var(--font-lg); /* 26px - H3 */
+  color: var(--primary);
+  margin: 0;
+}
+
+.header-logo-img {
+  height: var(--space-xl); /* 55px - Fibonacci */
+  width: auto;
+  display: block;
+}
+
+.cart-button {
+  background: none;
+  border: 2px solid var(--primary);
+  border-radius: var(--space-2xl); /* 89px - Fibonacci (50px como alternativa) */
+  padding: var(--space-xs) var(--space-md); /* 8px 21px - Fibonacci */
+  cursor: pointer;
+  font-size: var(--font-md); /* 20px */
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs); /* 8px - Fibonacci */
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.cart-button:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.cart-icon {
+  display: inline-block;
+}
+
+.cart-badge {
+  position: absolute;
+  top: calc(-1 * var(--space-xs)); /* -8px - Fibonacci */
+  right: calc(-1 * var(--space-xs)); /* -8px - Fibonacci */
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  width: var(--space-lg); /* 34px - Fibonacci */
+  height: var(--space-lg); /* 34px - Fibonacci */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-xs); /* 10px */
+  font-weight: bold;
+}
