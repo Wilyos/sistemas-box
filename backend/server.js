@@ -97,6 +97,12 @@ const transporter = nodemailer.createTransport(
 // Función para enviar email de notificación
 async function sendOrderEmail(orderData, attachmentInfo = null) {
   try {
+    console.log('\n🔧 Configuración de email:');
+    console.log('  - Resend habilitado:', !!resend);
+    console.log('  - RESEND_FROM:', RESEND_FROM);
+    console.log('  - OWNER_EMAIL:', process.env.OWNER_EMAIL);
+    console.log('  - Tiene adjunto:', !!attachmentInfo);
+    
     // Formatear productos
     const productsHtml = orderData.items?.map(item => `
       <tr>
@@ -187,31 +193,40 @@ async function sendOrderEmail(orderData, attachmentInfo = null) {
       `;
 
     if (resend && RESEND_FROM) {
+      console.log('🔄 Intentando enviar email con Resend...');
+      console.log('📤 Desde:', RESEND_FROM);
+      console.log('📥 Para:', process.env.OWNER_EMAIL);
+      
       const attachments = attachmentInfo?.path
         ? [
             {
               filename: attachmentInfo.originalName || path.basename(attachmentInfo.path),
               content: fs.readFileSync(attachmentInfo.path).toString('base64'),
-              type: attachmentInfo.mimetype,
             },
           ]
         : [];
 
-      const result = await resend.emails.send({
-        from: RESEND_FROM,
-        to: process.env.OWNER_EMAIL,
-        subject,
-        html,
-        attachments,
-      });
+      try {
+        const result = await resend.emails.send({
+          from: RESEND_FROM,
+          to: process.env.OWNER_EMAIL,
+          subject,
+          html,
+          attachments: attachments.length > 0 ? attachments : undefined,
+        });
 
-      if (result?.error) {
-        console.error('❌ Error enviando con Resend:', result.error);
-        return { success: false, error: result.error.message || 'Error de Resend' };
+        if (result?.error) {
+          console.error('❌ Error enviando con Resend:', result.error);
+          return { success: false, error: result.error.message || 'Error de Resend' };
+        }
+
+        console.log('✅ Email enviado con Resend exitosamente!');
+        console.log('📧 ID del mensaje:', result?.data?.id || result?.id);
+        return { success: true, messageId: result?.data?.id || result?.id };
+      } catch (resendError) {
+        console.error('❌ Error de Resend:', resendError);
+        return { success: false, error: resendError.message || 'Error enviando con Resend' };
       }
-
-      console.log('📧 Email enviado con Resend:', result?.data?.id || result?.id || result);
-      return { success: true, messageId: result?.data?.id || result?.id };
     }
 
     const mailOptions = {

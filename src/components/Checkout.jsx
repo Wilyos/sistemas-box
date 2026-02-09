@@ -93,19 +93,21 @@ export default function Checkout({ onBack }) {
             try {
               const result = await confirmPaymentInBackend(orderData, reference || orderData.reference);
               const message = result.emailSent
-                ? 'Pago confirmado. Notificación enviada correctamente.'
-                : 'Pago confirmado. Notificación registrada, envío pendiente.';
+                ? '✅ ¡Pago confirmado! Te contactaremos pronto para coordinar la entrega.'
+                : '✅ Pago confirmado. Recibirás un correo de confirmación pronto.';
               setToastMessage(message);
 
-              sendOrderToWhatsApp(orderData);
               localStorage.setItem('orderConfirmed', JSON.stringify({
                 reference: reference || orderData.reference,
                 timestamp: new Date().toISOString(),
                 message,
               }));
+              
+              // Limpiar carrito después de confirmar
+              clearCart();
             } catch (error) {
               console.error('Error confirmando pago:', error);
-              setToastMessage('Pago confirmado, pero no se pudo notificar. Intenta de nuevo.');
+              setToastMessage('⚠️ Pago confirmado, pero hubo un error al registrar la orden. Nos pondremos en contacto contigo.');
             } finally {
               localStorage.removeItem('pendingOrder');
             }
@@ -344,18 +346,11 @@ Fecha: ${new Date().toLocaleString('es-CO')}
 
       console.log('✅ Link generado:', data);
 
-      // Abrir checkout de Wompi en una ventana nueva
+      // Redirigir a Wompi en la misma ventana (los datos ya están guardados en localStorage)
       if (data.checkout_url) {
-        console.log('🔗 Abriendo Wompi...');
-        const wompiWindow = openPopupWithFallback(data.checkout_url);
-        
-        if (wompiWindow) {
-          setToastMessage('✅ Wompi abierto. Completa el pago y regresa aquí.');
-        } else {
-          // El popup fue bloqueado y el usuario eligió una opción del modal
-          setToastMessage('⚠️ Completa el pago y regresa a esta página.');
-        }
-        setIsProcessing(false);
+        console.log('🔗 Redirigiendo a Wompi...');
+        // Los datos ya están en localStorage, seguro para redirigir
+        window.location.href = data.checkout_url;
       } else {
         throw new Error('No se recibió URL de checkout');
       }
