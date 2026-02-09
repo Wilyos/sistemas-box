@@ -1,0 +1,126 @@
+.popup-hint-banner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  animation: slideInUp 0.5s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.popup-hint-content {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 450px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.5);
+  }
+}
+
+.popup-hint-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.popup-hint-text {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.popup-hint-text strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.popup-hint-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.popup-hint-btn-allow {
+  background: white;
+  color: #667eea;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.popup-hint-btn-allow:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+.popup-hint-btn-dismiss {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.popup-hint-btn-dismiss:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .popup-hint-banner {
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+  }
+
+  .popup-hint-content {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .popup-hint-text {
+    flex-basis: 100%;
+    margin-bottom: 8px;
+  }
+
+  .popup-hint-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

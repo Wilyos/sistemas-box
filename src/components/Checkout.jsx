@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useCart } from '../hooks/useCart';
 import { getApiUrl, API_CONFIG } from '../config/api';
 import Toast from './Toast';
+import PopupPermissionModal from './PopupPermissionModal';
 import './Checkout.css';
 
 export default function Checkout({ onBack }) {
@@ -20,6 +21,37 @@ export default function Checkout({ onBack }) {
   const [showWhatsAppWarning, setShowWhatsAppWarning] = useState(false);
   const [logoFile, setLogoFile] = useState(null);
   const [logoError, setLogoError] = useState('');
+  const [showPopupPermissionModal, setShowPopupPermissionModal] = useState(false);
+  const [popupsAllowed, setPopupsAllowed] = useState(null);
+
+  // Función mejorada para abrir popups con mejor detección
+  const openPopupWithFallback = (url, windowName = '_blank', features = 'noopener,noreferrer') => {
+    const newWindow = window.open(url, windowName, features);
+    
+    // Verificar si el popup fue bloqueado
+    if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+      // Popup bloqueado - mostrar modal de instrucciones
+      setShowPopupPermissionModal(true);
+      setPopupsAllowed(false);
+      
+      // Ofrecer alternativa
+      const confirmRedirect = window.confirm(
+        'Las ventanas emergentes están bloqueadas en tu navegador.\n\n' +
+        '¿Deseas abrir el enlace en esta misma pestaña?\n\n' +
+        '(Se recomienda habilitar popups para una mejor experiencia)'
+      );
+      
+      if (confirmRedirect) {
+        window.location.href = url;
+      }
+      
+      return null;
+    }
+    
+    // Popup abierto exitosamente
+    setPopupsAllowed(true);
+    return newWindow;
+  };
 
   const confirmPaymentInBackend = async (orderData, reference) => {
     const response = await fetch(getApiUrl(API_CONFIG.ENDPOINTS.CONFIRM_PAYMENT), {
@@ -203,12 +235,10 @@ Fecha: ${new Date().toLocaleString('es-CO')}
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     
     console.log('📱 Enviando pedido por WhatsApp...');
-    setToastMessage('¡Pago exitoso! Enviando detalles por WhatsApp...');
+    setToastMessage('¡Pago exitoso! Abriendo WhatsApp...');
     
-    // Pequeño retraso para que el usuario vea la notificación
-    setTimeout(() => {
-      window.open(whatsappUrl, '_blank');
-    }, 1500);
+    // Abrir WhatsApp inmediatamente (sin setTimeout para evitar bloqueo)
+    openPopupWithFallback(whatsappUrl);
   };
 
   const handleWhatsAppCheckout = () => {
@@ -222,9 +252,15 @@ Fecha: ${new Date().toLocaleString('es-CO')}
     const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '573015555555';
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
-    window.open(whatsappUrl, '_blank');
-    clearCart();
-    setIsCartOpen(false);
+    const opened = openPopupWithFallback(whatsappUrl);
+    
+    // Solo limpiar carrito si se abrió exitosamente o el usuario eligió una alternativa
+    if (opened !== null) {
+      setTimeout(() => {
+        clearCart();
+        setIsCartOpen(false);
+      }, 1000);
+    }
   };
 
   const handleWompiCheckout = async () => {
@@ -311,18 +347,13 @@ Fecha: ${new Date().toLocaleString('es-CO')}
       // Abrir checkout de Wompi en una ventana nueva
       if (data.checkout_url) {
         console.log('🔗 Abriendo Wompi...');
-        const wompiWindow = window.open(data.checkout_url, '_blank', 'noopener,noreferrer');
+        const wompiWindow = openPopupWithFallback(data.checkout_url);
         
         if (wompiWindow) {
-          setToastMessage('Se abrió Wompi en una nueva ventana. Completa el pago y regresa aquí.');
+          setToastMessage('✅ Wompi abierto. Completa el pago y regresa aquí.');
         } else {
-          // Si el navegador bloqueó el popup
-          const confirmRedirect = window.confirm('El navegador bloqueó la ventana de pago. ¿Deseas abrir el pago en esta pestaña?');
-          if (confirmRedirect) {
-            window.location.href = data.checkout_url;
-            return;
-          }
-          alert('Habilita los pop-ups para abrir el pago en una nueva ventana.');
+          // El popup fue bloqueado y el usuario eligió una opción del modal
+          setToastMessage('⚠️ Completa el pago y regresa a esta página.');
         }
         setIsProcessing(false);
       } else {
@@ -531,6 +562,17 @@ Fecha: ${new Date().toLocaleString('es-CO')}
       </div>
       
       {toastMessage && <Toast message={toastMessage} duration={3000} />}
+      
+      <PopupPermissionModal 
+        isOpen={showPopupPermissionModal}
+        onClose={() => setShowPopupPermissionModal(false)}
+        onTestPopup={(allowed) => {
+          setPopupsAllowed(allowed);
+          if (allowed) {
+            setToastMessage('✅ ¡Popups habilitados correctamente!');
+          }
+        }}
+      />
       
       {showWhatsAppWarning && (
         <div className="modal-overlay" onClick={() => setShowWhatsAppWarning(false)}>

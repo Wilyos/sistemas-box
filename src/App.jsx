@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import Login from './components/Login';
 import AdminPanel from './components/AdminPanel';
 import Toast from './components/Toast';
+import PopupHintBanner from './components/PopupHintBanner';
 import './styles/index.css';
 
 function AppContent() {
@@ -117,6 +118,9 @@ function AppContent() {
           <Footer />
 
           {toastMessage && <Toast message={toastMessage} duration={4000} />}
+
+          {/* Banner informativo de popups */}
+          <PopupHintBanner />
 
           {confirmation && (
             <div
