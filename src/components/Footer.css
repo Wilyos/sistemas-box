@@ -158,12 +158,14 @@
 
 .footer-bottom p {
   margin: 5px 0;
+  color: white;
 }
 
 .developed-by {
   font-size: 0.95rem;
   font-weight: 400;
   opacity: 0.9;
+  color: white;
 }
 
 /* Responsive */

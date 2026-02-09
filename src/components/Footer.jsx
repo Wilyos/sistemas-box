@@ -1,5 +1,5 @@
 import './Footer.css';
-import { FaWhatsapp, FaFacebook, FaInstagram, FaGlobe } from 'react-icons/fa';
+import { FaWhatsapp, FaFacebook, FaInstagram, FaGlobe, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -32,8 +32,8 @@ export default function Footer() {
             <div className="footer-section">
               <h3>NOS ENCONTRAMOS EN:</h3>
               <ul className="locations-list">
-                <li>• Carrera 54 # 53 - 115 - Medellin</li>
-                <li>• Calle 54 # 54 - 43 - Medellín</li>
+                <li><FaMapMarkerAlt className="icon" /> Carrera 54 # 53 - 115 - Medellin</li>
+                <li><FaMapMarkerAlt className="icon" /> Calle 54 # 54 - 43 - Medellín</li>
               </ul>
             </div>
 
@@ -48,7 +48,7 @@ export default function Footer() {
 
           <div className="footer-right">
             <img 
-              src="/footer.png" 
+              src="/boxfooter.png" 
               alt="Productos empaque" 
               className="footer-image"
             />
@@ -68,8 +68,8 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} Tu Caja en Línea. Todos los derechos reservados.</p>
-          <p className="developed-by">Developed by Wilyos</p>
+          <p>© {new Date().getFullYear()} Sistemas Litograficos. Todos los derechos reservados.</p>
+          <p className="developed-by"></p>
         </div>
       </div>
     </footer>
