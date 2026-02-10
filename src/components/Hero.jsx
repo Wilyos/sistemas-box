@@ -1,13 +1,38 @@
 import { useState, useEffect } from 'react';
 
-const banners = [
+const desktopBanners = [
   '/banners/banner1.jpeg',
   '/banners/banner2.png',
   '/banners/banner3.jpeg'
 ];
 
+const mobileBanners = [
+  '/banners/movil1.jpeg',
+  '/banners/movil2.jpeg',
+  '/banners/movil3.jpeg'
+];
+
 export default function Hero() {
   const [currentBanner, setCurrentBanner] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const banners = isMobile ? mobileBanners : desktopBanners;
+
+  // Reiniciar el banner actual si el índice está fuera de rango cuando cambien los banners
+  useEffect(() => {
+    if (currentBanner >= banners.length) {
+      setCurrentBanner(0);
+    }
+  }, [banners, currentBanner]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -15,15 +40,7 @@ export default function Hero() {
     }, 5000); // Cambiar cada 5 segundos
 
     return () => clearInterval(interval);
-  }, []);
-
-  const nextBanner = () => {
-    setCurrentBanner((prev) => (prev + 1) % banners.length);
-  };
-
-  const prevBanner = () => {
-    setCurrentBanner((prev) => (prev - 1 + banners.length) % banners.length);
-  };
+  }, [banners.length]);
 
   const goToBanner = (index) => {
     setCurrentBanner(index);
@@ -39,13 +56,6 @@ export default function Hero() {
             style={{ backgroundImage: `url(${banner})` }}
           />
         ))}
-        
-        <button className="carousel-btn prev" onClick={prevBanner} aria-label="Banner anterior">
-          ‹
-        </button>
-        <button className="carousel-btn next" onClick={nextBanner} aria-label="Siguiente banner">
-          ›
-        </button>
 
         <div className="carousel-dots">
           {banners.map((_, index) => (

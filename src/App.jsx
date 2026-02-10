@@ -4,7 +4,6 @@ import { AuthProvider } from './context/AuthContext';
 import { useAuth } from './hooks/useAuth';
 import { useState, useEffect } from 'react';
 import { getApiUrl, API_CONFIG } from './config/api';
-import Header from './components/Header';
 import Cart from './components/Cart';
 import Hero from './components/Hero';
 import ProductsSection from './components/ProductsSection';
@@ -15,6 +14,7 @@ import Login from './components/Login';
 import AdminPanel from './components/AdminPanel';
 import Toast from './components/Toast';
 import PopupHintBanner from './components/PopupHintBanner';
+import FloatingCartButton from './components/FloatingCartButton';
 import './styles/index.css';
 
 function AppContent() {
@@ -110,8 +110,8 @@ function AppContent() {
     <Routes>
       <Route path="/" element={
         <>
-          <Header />
           <Cart />
+          <FloatingCartButton />
           <Hero />
           <ProductsSection />
           <ServiceSection />

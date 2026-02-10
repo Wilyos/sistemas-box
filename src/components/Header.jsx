@@ -7,13 +7,7 @@ export default function Header() {
 
   return (
     <header className="header">
-      <div className="header-container">
-        <img
-          className="header-logo-img"
-          src="/logoA.png"
-          alt="Sistemas Litograficos"
-        />
-        
+      <div className="header-container header-container--compact">
         <button
           className="cart-button"
           onClick={() => setIsCartOpen(!isCartOpen)}

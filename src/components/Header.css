@@ -1,11 +1,13 @@
 .header {
   background: #437442;
   border-bottom: 1px solid #c8e6c9;
-  padding: var(--space-md) 0; /* 21px - Fibonacci */
-  sticky: top;
-  z-index: 100;
-  position: sticky;
+  padding: var(--space-xs) 0; /* barra más delgada */
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
 }
 
 .header-container {
@@ -13,20 +15,18 @@
   margin: 0 auto;
   padding: 0 var(--space-md); /* 21px - Fibonacci */
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+}
+
+.header-container--compact {
+  justify-content: flex-end;
 }
 
 .header-logo {
   font-size: var(--font-lg); /* 26px - H3 */
   color: var(--primary);
   margin: 0;
-}
-
-.header-logo-img {
-  height: var(--space-xl); /* 55px - Fibonacci */
-  width: auto;
-  display: block;
 }
 
 .cart-button {
