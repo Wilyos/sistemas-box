@@ -1,5 +1,6 @@
 import './Footer.css';
 import { FaWhatsapp, FaFacebook, FaInstagram, FaGlobe, FaMapMarkerAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -31,10 +32,13 @@ export default function Footer() {
 
             <div className="footer-section">
               <h3>NOS ENCONTRAMOS EN:</h3>
-              <ul className="locations-list">
-                <li><FaMapMarkerAlt className="icon" /> Carrera 54 # 53 - 115 - Medellin</li>
-                <li><FaMapMarkerAlt className="icon" /> Calle 54 # 54 - 43 - Medellín</li>
-              </ul>
+              <Link to="/localizador" className="store-locator-link">
+                <FaMapMarkerAlt className="locator-icon" />
+                <div className="locator-text">
+                  <strong>Localizador de Tiendas</strong>
+                  <span>Ver todas nuestras ubicaciones en el mapa</span>
+                </div>
+              </Link>
             </div>
 
             <p className="footer-coverage">

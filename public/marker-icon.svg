@@ -1,0 +1,70 @@
+<svg width="48" height="64" viewBox="0 0 48 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Sombra más suave -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="3" result="offsetblur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.4"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Gradiente para el pin -->
+    <linearGradient id="pinGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#43A047;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E7D32;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradiente para la corona -->
+    <linearGradient id="crownGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD54F;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFC107;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Pin principal con sombra y borde -->
+  <path d="M24 2C14.059 2 6 10.059 6 20c0 14 18 42 18 42s18-28 18-42c0-9.941-8.059-18-18-18z" 
+        fill="url(#pinGradient)" 
+        filter="url(#shadow)"
+        stroke="#1B5E20" 
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+  
+  <!-- Círculo interior blanco con borde -->
+  <circle cx="24" cy="20" r="12" fill="white" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <!-- Corona dorada -->
+  <g transform="translate(24, 20)">
+    <!-- Puntas de la corona -->
+    <path d="M-7 1 L-5.5 -4 L-3.5 1 L-1.5 -5 L0.5 1 L2.5 -5 L4.5 1 L6.5 -4 L8 1 L7 5 L-6 5 Z" 
+          fill="url(#crownGradient)" 
+          stroke="#F57F17" 
+          stroke-width="0.8"
+          stroke-linejoin="round"/>
+    
+    <!-- Base/banda de la corona -->
+    <rect x="-6" y="5" width="13" height="2.5" 
+          fill="#FFC107" 
+          stroke="#F57F17" 
+          stroke-width="0.8" 
+          rx="0.5"/>
+    
+    <!-- Joyas en la corona -->
+    <circle cx="-4" cy="0" r="1" fill="#E53935" opacity="0.9"/>
+    <circle cx="0" cy="-2" r="1.2" fill="#1E88E5" opacity="0.9"/>
+    <circle cx="4" cy="0" r="1" fill="#E53935" opacity="0.9"/>
+    
+    <!-- Brillo en las joyas -->
+    <circle cx="-3.5" cy="-0.3" r="0.3" fill="white" opacity="0.8"/>
+    <circle cx="0.3" cy="-2.3" r="0.4" fill="white" opacity="0.8"/>
+    <circle cx="4.5" cy="-0.3" r="0.3" fill="white" opacity="0.8"/>
+  </g>
+  
+  <!-- Brillo en el pin (efecto 3D) -->
+  <ellipse cx="18" cy="12" rx="5" ry="8" fill="white" opacity="0.25"/>
+</svg>

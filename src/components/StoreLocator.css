@@ -1,0 +1,326 @@
+.store-locator {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding-top: 100px;
+}
+
+.store-locator-header {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-md);
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
+}
+
+.back-link {
+  position: absolute;
+  top: var(--space-lg);
+  left: var(--space-lg);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--primary);
+  text-decoration: none;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: rgba(46, 125, 50, 0.1);
+  transform: translateX(-2px);
+}
+
+.back-link svg {
+  font-size: 14px;
+}
+
+.store-locator-header h1 {
+  font-size: var(--font-xl);
+  color: var(--dark);
+  margin-bottom: var(--space-sm);
+}
+
+.store-locator-header p {
+  font-size: var(--font-md);
+  color: #666;
+}
+
+.store-locator-content {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  max-width: 1600px;
+  margin: 0 auto;
+  height: calc(100vh - 250px);
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stores-list {
+  border-right: 1px solid #e0e0e0;
+  overflow-y: auto;
+  padding: var(--space-lg);
+  background: #fafafa;
+}
+
+.stores-list h2 {
+  font-size: var(--font-lg);
+  color: var(--dark);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--primary);
+}
+
+.store-card {
+  background: white;
+  border-radius: var(--space-sm);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.store-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(66, 158, 82, 0.2);
+  transform: translateY(-2px);
+}
+
+.store-card.active {
+  border-color: var(--primary);
+  background: #f0f9f2;
+  box-shadow: 0 4px 12px rgba(66, 158, 82, 0.3);
+}
+
+.store-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.store-icon {
+  color: var(--primary);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.store-card-header h3 {
+  font-size: var(--font-md);
+  color: var(--dark);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.store-details {
+  margin-left: calc(1.5rem + var(--space-sm));
+}
+
+.store-details p {
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-sm);
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.store-address {
+  color: var(--dark);
+  font-size: var(--font-base);
+  margin-bottom: var(--space-md);
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.detail-icon {
+  color: var(--primary);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.store-phone a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.store-phone a:hover {
+  text-decoration: underline;
+}
+
+.store-actions {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid #e0e0e0;
+}
+
+.directions-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--space-sm);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.directions-btn:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(66, 158, 82, 0.3);
+}
+
+.map-container {
+  position: relative;
+  background: #e5e3df;
+  overflow: hidden;
+}
+
+.map-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .store-locator-content {
+    grid-template-columns: 350px 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .store-locator {
+    padding-top: 80px;
+  }
+
+  .store-locator-header {
+    padding: var(--space-md);
+  }
+
+  .store-locator-header h1 {
+    font-size: var(--font-lg);
+  }
+
+  .store-locator-header p {
+    font-size: var(--font-sm);
+  }
+
+  .back-link {
+    position: static;
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--space-md);
+  }
+
+  .store-locator-content {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .stores-list {
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    max-height: 350px;
+    padding: var(--space-md);
+  }
+
+  .stores-list h2 {
+    font-size: var(--font-md);
+    margin-bottom: var(--space-md);
+  }
+
+  /* Tarjetas más compactas en mobile */
+  .store-card {
+    padding: var(--space-md);
+    margin-bottom: var(--space-sm);
+  }
+
+  .store-card-header {
+    gap: var(--space-xs);
+    margin-bottom: var(--space-sm);
+  }
+
+  .store-icon {
+    font-size: 1.2rem;
+  }
+
+  .store-card-header h3 {
+    font-size: var(--font-sm);
+    line-height: 1.2;
+  }
+
+  .store-details {
+    margin-left: calc(1.2rem + var(--space-xs));
+  }
+
+  .store-details p {
+    margin-bottom: var(--space-xs);
+    font-size: 0.85rem;
+  }
+
+  .store-address {
+    font-size: var(--font-sm);
+    margin-bottom: var(--space-sm);
+  }
+
+  .detail-icon {
+    font-size: 0.8rem;
+  }
+
+  .store-actions {
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
+  }
+
+  .directions-btn {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.85rem;
+    gap: 4px;
+  }
+
+  .map-container {
+    height: 400px;
+  }
+
+  .map-wrapper {
+    min-height: 400px;
+  }
+
+  .map-wrapper iframe {
+    min-height: 400px;
+  }
+}
+
+/* Scrollbar personalizado para la lista */
+.stores-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.stores-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.stores-list::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+.stores-list::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}

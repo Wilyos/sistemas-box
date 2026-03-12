@@ -9,6 +9,7 @@ import Hero from './components/Hero';
 import CategoriesShowcase from './components/CategoriesShowcase';
 import ProductsPage from './components/ProductsPage';
 import ServiceSection from './components/ServiceSection';
+import StoreLocator from './components/StoreLocator';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import AdminPanel from './components/AdminPanel';
@@ -206,6 +207,14 @@ function AppContent() {
         </>
       } />
       <Route path="/productos" element={<ProductsPage />} />
+      <Route path="/localizador" element={
+        <>
+          <Cart />
+          <FloatingCartButton />
+          <StoreLocator />
+          <Footer />
+        </>
+      } />
     </Routes>
   );
 }
