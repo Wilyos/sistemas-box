@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "Alitas Especial",
+    "category": "pollo",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍗",
     "color": "primary",
@@ -18,6 +19,7 @@
   {
     "id": 2,
     "name": "Alitas Pequeñas",
+    "category": "pollo",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍗",
     "color": "primary",
@@ -34,6 +36,7 @@
   {
     "id": 3,
     "name": "Almuerzo",
+    "category": "asiatica",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍱",
     "color": "primary",
@@ -50,6 +53,7 @@
   {
     "id": 4,
     "name": "Bonsai",
+    "category": "asiatica",
     "description": "Papel: Kraft o Maulle.",
     "icon": "📦",
     "color": "primary",
@@ -66,6 +70,7 @@
   {
     "id": 5,
     "name": "Broaster",
+    "category": "pollo",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍗",
     "color": "primary",
@@ -82,6 +87,7 @@
   {
     "id": 6,
     "name": "Burguer Combo",
+    "category": "hamburguesa",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍔",
     "color": "primary",
@@ -98,6 +104,7 @@
   {
     "id": 7,
     "name": "Burguer Big",
+    "category": "hamburguesa",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍔",
     "color": "primary",
@@ -114,6 +121,7 @@
   {
     "id": 8,
     "name": "Burguer Pro",
+    "category": "hamburguesa",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍔",
     "color": "primary",
@@ -130,6 +138,7 @@
   {
     "id": 9,
     "name": "Caja J1",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "📦",
     "color": "primary",
@@ -146,6 +155,7 @@
   {
     "id": 11,
     "name": "Combo Alto",
+    "category": "hamburguesa",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍔",
     "color": "primary",
@@ -162,6 +172,7 @@
   {
     "id": 12,
     "name": "Cono 2 Salseros",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍟",
     "color": "primary",
@@ -178,6 +189,7 @@
   {
     "id": 13,
     "name": "Cono Broche",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍟",
     "color": "primary",
@@ -194,6 +206,7 @@
   {
     "id": 14,
     "name": "Cono Churros",
+    "category": "postres",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍩",
     "color": "primary",
@@ -210,6 +223,7 @@
   {
     "id": 15,
     "name": "Cono Fries",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍟",
     "color": "primary",
@@ -226,6 +240,7 @@
   {
     "id": 16,
     "name": "Cono Snacks",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍟",
     "color": "primary",
@@ -242,6 +257,7 @@
   {
     "id": 17,
     "name": "Cono Waffles",
+    "category": "postres",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🧇",
     "color": "primary",
@@ -258,6 +274,7 @@
   {
     "id": 18,
     "name": "Cono Zona",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍟",
     "color": "primary",
@@ -274,6 +291,7 @@
   {
     "id": 19,
     "name": "Contenedor Naty",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "📦",
     "color": "primary",
@@ -290,6 +308,7 @@
   {
     "id": 20,
     "name": "Donas Familiar",
+    "category": "postres",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍩",
     "color": "primary",
@@ -306,6 +325,7 @@
   {
     "id": 21,
     "name": "Empanadas",
+    "category": "asiatica",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🥟",
     "color": "primary",
@@ -322,6 +342,7 @@
   {
     "id": 22,
     "name": "Frisnacks 12 Onzas",
+    "category": "asiatica",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🥤",
     "color": "primary",
@@ -338,6 +359,7 @@
   {
     "id": 23,
     "name": "Frisnacks 14 Onzas",
+    "category": "asiatica",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🥤",
     "color": "primary",
@@ -354,6 +376,7 @@
   {
     "id": 25,
     "name": "Hamburguesa Bandeja",
+    "category": "hamburguesa",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍔",
     "color": "primary",
@@ -370,6 +393,7 @@
   {
     "id": 26,
     "name": "Hamburguesa Especial",
+    "category": "hamburguesa",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍔",
     "color": "primary",
@@ -386,6 +410,7 @@
   {
     "id": 27,
     "name": "Hamburguesa Sencilla",
+    "category": "hamburguesa",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍔",
     "color": "primary",
@@ -402,6 +427,7 @@
   {
     "id": 29,
     "name": "Lechona 300gr",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🥘",
     "color": "primary",
@@ -418,6 +444,7 @@
   {
     "id": 30,
     "name": "Lechona 400gr",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🥘",
     "color": "primary",
@@ -434,6 +461,7 @@
   {
     "id": 31,
     "name": "Lechona 600gr",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🥘",
     "color": "primary",
@@ -450,6 +478,7 @@
   {
     "id": 33,
     "name": "Maletín Buñuelos 2",
+    "category": "postres",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🎒",
     "color": "primary",
@@ -466,6 +495,7 @@
   {
     "id": 34,
     "name": "Maletín Buñuelos",
+    "category": "postres",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🎒",
     "color": "primary",
@@ -482,6 +512,7 @@
   {
     "id": 35,
     "name": "Maletín Medio Pollo",
+    "category": "pollo",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🎒",
     "color": "primary",
@@ -498,6 +529,7 @@
   {
     "id": 36,
     "name": "Maletín Perro",
+    "category": "perro",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🎒",
     "color": "primary",
@@ -514,6 +546,7 @@
   {
     "id": 37,
     "name": "Maletín Pollo",
+    "category": "pollo",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🎒",
     "color": "primary",
@@ -530,6 +563,7 @@
   {
     "id": 38,
     "name": "Medio Pollo",
+    "category": "pollo",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍗",
     "color": "primary",
@@ -546,6 +580,7 @@
   {
     "id": 39,
     "name": "Mega Caja",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "📦",
     "color": "primary",
@@ -562,6 +597,7 @@
   {
     "id": 40,
     "name": "Mini Buñuelos",
+    "category": "postres",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🥯",
     "color": "primary",
@@ -578,6 +614,7 @@
   {
     "id": 41,
     "name": "Mini Caja",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "📦",
     "color": "primary",
@@ -594,6 +631,7 @@
   {
     "id": 42,
     "name": "Multifuncional",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "📦",
     "color": "primary",
@@ -610,6 +648,7 @@
   {
     "id": 43,
     "name": "Papas Mesa",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍟",
     "color": "primary",
@@ -626,6 +665,7 @@
   {
     "id": 45,
     "name": "Perro Especial",
+    "category": "perro",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🌭",
     "color": "primary",
@@ -642,6 +682,7 @@
   {
     "id": 46,
     "name": "Perro Sencillo",
+    "category": "perro",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🌭",
     "color": "primary",
@@ -658,6 +699,7 @@
   {
     "id": 47,
     "name": "Pescado",
+    "category": "mariscos",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🐟",
     "color": "primary",
@@ -674,6 +716,7 @@
   {
     "id": 48,
     "name": "Picada Grande",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍖",
     "color": "primary",
@@ -690,6 +733,7 @@
   {
     "id": 49,
     "name": "Pizza Personal",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍕",
     "color": "primary",
@@ -706,6 +750,7 @@
   {
     "id": 51,
     "name": "Plato 1",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍽️",
     "color": "primary",
@@ -722,6 +767,7 @@
   {
     "id": 52,
     "name": "Plato 2",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍽️",
     "color": "primary",
@@ -738,6 +784,7 @@
   {
     "id": 53,
     "name": "Plato 3",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍽️",
     "color": "primary",
@@ -754,6 +801,7 @@
   {
     "id": 54,
     "name": "Plato 4",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍽️",
     "color": "primary",
@@ -770,6 +818,7 @@
   {
     "id": 55,
     "name": "Plato Arepas Rellenas",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍽️",
     "color": "primary",
@@ -786,6 +835,7 @@
   {
     "id": 56,
     "name": "Plato Fries",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍽️",
     "color": "primary",
@@ -802,6 +852,7 @@
   {
     "id": 57,
     "name": "Plato Lechona",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍽️",
     "color": "primary",
@@ -818,6 +869,7 @@
   {
     "id": 58,
     "name": "Plato Master",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍽️",
     "color": "primary",
@@ -834,6 +886,7 @@
   {
     "id": 59,
     "name": "Plato Ovalo",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍽️",
     "color": "primary",
@@ -850,6 +903,7 @@
   {
     "id": 60,
     "name": "Plato Pollo",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍽️",
     "color": "primary",
@@ -866,6 +920,7 @@
   {
     "id": 61,
     "name": "Plato Santo",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍽️",
     "color": "primary",
@@ -882,6 +937,7 @@
   {
     "id": 62,
     "name": "Plato",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍽️",
     "color": "primary",
@@ -898,6 +954,7 @@
   {
     "id": 63,
     "name": "Pollo y Medio Maletín",
+    "category": "pollo",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🎒",
     "color": "primary",
@@ -914,6 +971,7 @@
   {
     "id": 64,
     "name": "Pollo y Medio",
+    "category": "pollo",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍗",
     "color": "primary",
@@ -930,6 +988,7 @@
   {
     "id": 66,
     "name": "Porta Arepas 1",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🥙",
     "color": "primary",
@@ -946,6 +1005,7 @@
   {
     "id": 67,
     "name": "Porta Arepas 2",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🥙",
     "color": "primary",
@@ -962,6 +1022,7 @@
   {
     "id": 68,
     "name": "Porta Papas",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍟",
     "color": "primary",
@@ -978,6 +1039,7 @@
   {
     "id": 69,
     "name": "Porta Perros",
+    "category": "perro",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🌭",
     "color": "primary",
@@ -994,6 +1056,7 @@
   {
     "id": 70,
     "name": "Porta Pizza",
+    "category": "otros",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍕",
     "color": "primary",
@@ -1010,6 +1073,7 @@
   {
     "id": 71,
     "name": "Salchipapas",
+    "category": "perro",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍟",
     "color": "primary",
@@ -1026,6 +1090,7 @@
   {
     "id": 72,
     "name": "Sushi 2",
+    "category": "asiatica",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍱",
     "color": "primary",
@@ -1042,6 +1107,7 @@
   {
     "id": 73,
     "name": "Sushi",
+    "category": "asiatica",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🍱",
     "color": "primary",
@@ -1058,6 +1124,7 @@
   {
     "id": 74,
     "name": "Wok 1000gr",
+    "category": "asiatica",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🥡",
     "color": "primary",
@@ -1074,6 +1141,7 @@
   {
     "id": 75,
     "name": "Wok 1500gr",
+    "category": "asiatica",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🥡",
     "color": "primary",
@@ -1090,6 +1158,7 @@
   {
     "id": 76,
     "name": "Wok 500gr",
+    "category": "asiatica",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🥡",
     "color": "primary",
@@ -1106,6 +1175,7 @@
   {
     "id": 77,
     "name": "Wok 600gr",
+    "category": "asiatica",
     "description": "Papel: Kraft o Maulle.",
     "icon": "🥡",
     "color": "primary",
@@ -1122,6 +1192,7 @@
   {
     "id": 78,
     "name": "Crepes",
+    "category": "postres",
     "description": "Papel: Kraft o Maulle.",
     "icon": "",
     "color": "primary",

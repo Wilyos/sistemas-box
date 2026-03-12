@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { getApiUrl, API_CONFIG } from './config/api';
 import Cart from './components/Cart';
 import Hero from './components/Hero';
-import ProductsSection from './components/ProductsSection';
+import CategoriesShowcase from './components/CategoriesShowcase';
 import ProductsPage from './components/ProductsPage';
 import ServiceSection from './components/ServiceSection';
 import Footer from './components/Footer';
@@ -113,7 +113,7 @@ function AppContent() {
           <Cart />
           <FloatingCartButton />
           <Hero />
-          <ProductsSection />
+          <CategoriesShowcase />
           <ServiceSection />
           <Footer />
 

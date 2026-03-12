@@ -29,24 +29,15 @@ export default function ServiceSection() {
                 <li><strong>Empieza hoy con el 50%</strong> y liquida el resto al momento del despacho.</li>
               </ul>
             </div>
-          </div>
 
-          <div className="service-video service-video-top">
-            <video
-              className="service-video-media"
-              src="/Services1.mp4"
-              controls
-              playsInline
-            />
-          </div>
-
-          <div className="service-video service-video-bottom">
-            <video
-              className="service-video-media"
-              src="/services2.mp4"
-              controls
-              playsInline
-            />
+            <div className="service-video service-video-bottom">
+              <video
+                className="service-video-media"
+                src="/services2.mp4"
+                controls
+                playsInline
+              />
+            </div>
           </div>
           
           <div className="service-right">

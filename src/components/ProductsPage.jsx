@@ -4,6 +4,7 @@ import { collection, onSnapshot } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import ProductCard from './ProductCard';
 import ProductModal from './ProductModal';
+import CategoryFilter from './CategoryFilter';
 import products from '../data/products.json';
 import Header from './Header';
 import Footer from './Footer';
@@ -16,8 +17,14 @@ export default function ProductsPage() {
   const [items, setItems] = useState(products);
   const [isLoading, setIsLoading] = useState(true);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('todos');
   const cardsRef = useRef([]);
   const navigate = useNavigate();
+
+  // Filtrar productos por categoría
+  const filteredItems = selectedCategory === 'todos' 
+    ? items 
+    : items.filter(item => item.category === selectedCategory);
 
   // Cargar productos desde Firestore con listener en tiempo real
   useEffect(() => {
@@ -124,25 +131,40 @@ export default function ProductsPage() {
           </button>
         </div>
 
+        {!isLoading && (
+          <CategoryFilter 
+            selectedCategory={selectedCategory}
+            onCategoryChange={setSelectedCategory}
+          />
+        )}
+
         {isLoading ? (
           <div className="loading-container">
             <p>Cargando productos...</p>
           </div>
         ) : (
-          <div className="product-grid">
-            {items.map((product, index) => (
-              <div
-                key={product.id}
-                ref={(el) => (cardsRef.current[index] = el)}
-              >
-                <ProductCard
-                  product={product}
-                  onDetailsClick={setSelectedProduct}
-                  isVisible={visibleProducts[index]}
-                />
+          <>
+            {filteredItems.length > 0 ? (
+              <div className="product-grid">
+                {filteredItems.map((product, index) => (
+                  <div
+                    key={product.id}
+                    ref={(el) => (cardsRef.current[index] = el)}
+                  >
+                    <ProductCard
+                      product={product}
+                      onDetailsClick={setSelectedProduct}
+                      isVisible={visibleProducts[index]}
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            ) : (
+              <div className="empty-state">
+                <p>No hay productos en esta categoría.</p>
+              </div>
+            )}
+          </>
         )}
 
         {!isLoading && items.length === 0 && (
