@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useCart } from '../hooks/useCart';
-import { getApiUrl, API_CONFIG } from '../config/api';
 import Toast from './Toast';
 import PopupPermissionModal from './PopupPermissionModal';
 import './Checkout.css';
@@ -15,14 +14,10 @@ export default function Checkout({ onBack }) {
     city: '',
     notes: '',
   });
-  const [paymentMethod, setPaymentMethod] = useState('wompi');
   const [isProcessing, setIsProcessing] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
-  const [showWhatsAppWarning, setShowWhatsAppWarning] = useState(false);
-  const [logoFile, setLogoFile] = useState(null);
-  const [logoError, setLogoError] = useState('');
   const [showPopupPermissionModal, setShowPopupPermissionModal] = useState(false);
-  const [popupsAllowed, setPopupsAllowed] = useState(null);
+  const [showWhatsAppWarning, setShowWhatsAppWarning] = useState(false);
 
   // Función mejorada para abrir popups con mejor detección
   const openPopupWithFallback = (url, windowName = '_blank', features = 'noopener,noreferrer') => {
@@ -32,7 +27,6 @@ export default function Checkout({ onBack }) {
     if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
       // Popup bloqueado - mostrar modal de instrucciones
       setShowPopupPermissionModal(true);
-      setPopupsAllowed(false);
       
       // Ofrecer alternativa
       const confirmRedirect = window.confirm(
@@ -49,95 +43,8 @@ export default function Checkout({ onBack }) {
     }
     
     // Popup abierto exitosamente
-    setPopupsAllowed(true);
     return newWindow;
   };
-
-  const confirmPaymentInBackend = async (orderData, reference) => {
-    const response = await fetch(getApiUrl(API_CONFIG.ENDPOINTS.CONFIRM_PAYMENT), {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        reference,
-        orderData,
-      }),
-    });
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      throw new Error(data.error || 'No se pudo confirmar el pago');
-    }
-
-    return data;
-  };
-
-  // Detectar retorno de Wompi y confirmar envío
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const paymentSuccess = urlParams.get('payment_success');
-    const reference = urlParams.get('reference');
-
-    if (paymentSuccess === 'true') {
-      console.log('✅ Pago exitoso detectado');
-
-      const savedOrderData = localStorage.getItem('pendingOrder');
-
-      if (savedOrderData) {
-        try {
-          const orderData = JSON.parse(savedOrderData);
-
-          (async () => {
-            try {
-              const result = await confirmPaymentInBackend(orderData, reference || orderData.reference);
-              const message = result.emailSent
-                ? '✅ ¡Pago confirmado! Te contactaremos pronto para coordinar la entrega.'
-                : '✅ Pago confirmado. Recibirás un correo de confirmación pronto.';
-              setToastMessage(message);
-
-              localStorage.setItem('orderConfirmed', JSON.stringify({
-                reference: reference || orderData.reference,
-                timestamp: new Date().toISOString(),
-                message,
-              }));
-              
-              // Limpiar carrito después de confirmar
-              clearCart();
-            } catch (error) {
-              console.error('Error confirmando pago:', error);
-              setToastMessage('⚠️ Pago confirmado, pero hubo un error al registrar la orden. Nos pondremos en contacto contigo.');
-            } finally {
-              localStorage.removeItem('pendingOrder');
-            }
-          })();
-        } catch (error) {
-          console.error('Error procesando orden:', error);
-        }
-      }
-
-      window.history.replaceState({}, document.title, window.location.pathname);
-    }
-  }, []);
-
-  useEffect(() => {
-    const handleStorage = (event) => {
-      if (event.key === 'orderConfirmed' && event.newValue) {
-        try {
-          const payload = JSON.parse(event.newValue);
-          if (payload?.message) {
-            setToastMessage(payload.message);
-          }
-        } catch (error) {
-          console.error('Error leyendo confirmación:', error);
-        }
-      }
-    };
-
-    window.addEventListener('storage', handleStorage);
-    return () => window.removeEventListener('storage', handleStorage);
-  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -147,91 +54,47 @@ export default function Checkout({ onBack }) {
     }));
   };
 
-  const handleLogoChange = (e) => {
-    const file = e.target.files?.[0] || null;
+  const getInkLabel = (inkType) => (inkType === 'oneColor' ? 'Una tinta' : 'Varias tintas');
 
-    if (!file) {
-      setLogoFile(null);
-      setLogoError('');
-      return;
-    }
+  const generateOrderSummary = () => {
+    const items = cartItems
+      .map((item, index) => {
+        const inkLabel = getInkLabel(item.inkType);
+        const paperLabel = item.selectedPaperLabel || item.paperType || 'No especificado';
+        const subtotal = (item.price * item.quantity).toFixed(2);
 
-    const isValidType = file.type.startsWith('image/') || file.type === 'application/pdf';
-    const maxSizeBytes = 5 * 1024 * 1024;
+        return [
+          `${index + 1}. Empaque: ${item.name}`,
+          `   - Tipo de tinta: ${inkLabel}`,
+          `   - Papel: ${paperLabel}`,
+          `   - Cantidad: ${item.quantity.toLocaleString()}`,
+          `   - Valor: $${subtotal}`,
+        ].join('\n');
+      })
+      .join('\n\n');
 
-    if (!isValidType) {
-      setLogoFile(null);
-      setLogoError('Solo se permite imagen o PDF.');
-      return;
-    }
-
-    if (file.size > maxSizeBytes) {
-      setLogoFile(null);
-      setLogoError('El archivo supera 5MB.');
-      return;
-    }
-
-    setLogoError('');
-    setLogoFile(file);
+    return [
+      `Hola, mi nombre es ${formData.fullName}.`,
+      'Estos son mis datos y deseo adquirir los siguientes empaques:',
+      '',
+      '*MIS DATOS*',
+      `- Nombre: ${formData.fullName}`,
+      `- Teléfono: ${formData.phone}`,
+      `- Correo: ${formData.email || 'No suministrado'}`,
+      `- Dirección: ${formData.address || 'No suministrada'}`,
+      `- Ciudad: ${formData.city || 'No suministrada'}`,
+      formData.notes ? `- Observaciones: ${formData.notes}` : '- Observaciones: Ninguna',
+      '',
+      '*DETALLE DEL CARRITO*',
+      items,
+      '',
+      `*TOTAL ESTIMADO: $${getTotal().toFixed(2)}*`,
+      `Fecha: ${new Date().toLocaleString('es-CO')}`,
+    ].join('\n');
   };
 
-  const uploadLogo = async (reference) => {
-    const formData = new FormData();
-    formData.append('reference', reference);
-    formData.append('logo', logoFile);
-
-    const response = await fetch(getApiUrl(API_CONFIG.ENDPOINTS.UPLOAD_LOGO), {
-      method: 'POST',
-      body: formData,
-    });
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      throw new Error(data.error || 'No se pudo subir el logo');
-    }
-
-    return data;
-  };
-
-  const generateOrderSummary = (orderData = null) => {
-    const data = orderData || {
-      items: cartItems,
-      customer: formData,
-      total: getTotal()
-    };
-
-    const items = data.items
-      .map(
-        (item) =>
-          `• ${item.name} x${item.quantity} = $${(item.price * item.quantity).toFixed(2)}`
-      )
-      .join('\n');
-
-    return `
-*CONFIRMACIÓN DE COMPRA* ✅
-
-*PRODUCTOS:*
-${items}
-
-━━━━━━━━━━━━━━━━
-*TOTAL PAGADO: $${data.total.toFixed(2)}* 💳
-━━━━━━━━━━━━━━━━
-
-*DATOS DEL CLIENTE:*
-👤 ${data.customer.fullName}
-📧 ${data.customer.email}
-📱 ${data.customer.phone}
-📍 ${data.customer.address}, ${data.customer.city}
-${data.customer.notes ? `📝 Notas: ${data.customer.notes}` : ''}
-
-*Pago realizado con Wompi*
-Fecha: ${new Date().toLocaleString('es-CO')}
-    `.trim();
-  };
-
-  const sendOrderToWhatsApp = (orderData) => {
-    const summary = generateOrderSummary(orderData);
+  const sendOrderToWhatsApp = () => {
+    const summary = generateOrderSummary();
     const encodedMessage = encodeURIComponent(summary);
     const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '573015555555';
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
@@ -240,21 +103,17 @@ Fecha: ${new Date().toLocaleString('es-CO')}
     setToastMessage('¡Pago exitoso! Abriendo WhatsApp...');
     
     // Abrir WhatsApp inmediatamente (sin setTimeout para evitar bloqueo)
-    openPopupWithFallback(whatsappUrl);
+    return openPopupWithFallback(whatsappUrl);
   };
 
-  const handleWhatsAppCheckout = () => {
-    if (!formData.fullName || !formData.phone) {
-      alert('Por favor completa nombre y teléfono');
+  const handleWhatsAppCheckout = async () => {
+    if (!formData.fullName || !formData.phone || !formData.address || !formData.city) {
+      alert('Por favor completa nombre, teléfono, dirección y ciudad');
       return;
     }
 
-    const summary = generateOrderSummary();
-    const encodedMessage = encodeURIComponent(summary);
-    const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '573015555555';
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
-    const opened = openPopupWithFallback(whatsappUrl);
+    setIsProcessing(true);
+    const opened = sendOrderToWhatsApp();
     
     // Solo limpiar carrito si se abrió exitosamente o el usuario eligió una alternativa
     if (opened !== null) {
@@ -263,113 +122,12 @@ Fecha: ${new Date().toLocaleString('es-CO')}
         setIsCartOpen(false);
       }, 1000);
     }
-  };
-
-  const handleWompiCheckout = async () => {
-    if (!formData.fullName || !formData.email || !formData.phone) {
-      alert('Por favor completa todos los campos requeridos');
-      return;
-    }
-
-    if (!logoFile) {
-      alert('Por favor adjunta un logo (imagen o PDF)');
-      return;
-    }
-
-    setIsProcessing(true);
-
-    try {
-      const reference = `ORDER-${Date.now()}`;
-      const total = Math.round(getTotal() * 100); // En centavos
-
-      console.log('🔄 Iniciando pago con Wompi...');
-
-      // Guardar datos del pedido para enviar por WhatsApp después del pago
-      const orderData = {
-        items: cartItems.map(item => ({
-          name: item.name,
-          quantity: item.quantity,
-          price: item.price
-        })),
-        customer: {
-          fullName: formData.fullName,
-          email: formData.email,
-          phone: formData.phone,
-          address: formData.address,
-          city: formData.city,
-          notes: formData.notes
-        },
-        total: getTotal(),
-        reference,
-        timestamp: new Date().toISOString()
-      };
-      
-      localStorage.setItem('pendingOrder', JSON.stringify(orderData));
-      console.log('💾 Datos del pedido guardados para WhatsApp');
-
-      console.log('⬆️ Subiendo logo...');
-      await uploadLogo(reference);
-      console.log('✅ Logo subido');
-
-      // Llamar al backend para crear la transacción
-      const response = await fetch(getApiUrl(API_CONFIG.ENDPOINTS.TRANSACTIONS), {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          amount_in_cents: total,
-          reference,
-          customer_email: formData.email,
-          customer_data: {
-            phone_number: formData.phone,
-            full_name: formData.fullName,
-          },
-          metadata: {
-            address: formData.address,
-            city: formData.city,
-            notes: formData.notes,
-            items: cartItems.map(item => ({
-              name: item.name,
-              quantity: item.quantity,
-              price: item.price
-            }))
-          }
-        }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Error al crear el link de pago');
-      }
-
-      console.log('✅ Link generado:', data);
-
-      // Redirigir a Wompi en la misma ventana (los datos ya están guardados en localStorage)
-      if (data.checkout_url) {
-        console.log('🔗 Redirigiendo a Wompi...');
-        // Los datos ya están en localStorage, seguro para redirigir
-        window.location.href = data.checkout_url;
-      } else {
-        throw new Error('No se recibió URL de checkout');
-      }
-    } catch (error) {
-      console.error('❌ Error procesando pago:', error);
-      alert(`Error: ${error.message}`);
-      localStorage.removeItem('pendingOrder');
-      setIsProcessing(false);
-    }
+    setIsProcessing(false);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (paymentMethod === 'whatsapp') {
-      setShowWhatsAppWarning(true);
-    } else if (paymentMethod === 'wompi') {
-      handleWompiCheckout();
-    }
+    setShowWhatsAppWarning(true);
   };
 
   const handleConfirmWhatsApp = () => {
@@ -403,14 +161,13 @@ Fecha: ${new Date().toLocaleString('es-CO')}
 
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="email">Email *</label>
+                <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  required
                   placeholder="tu@email.com"
                 />
               </div>
@@ -468,41 +225,10 @@ Fecha: ${new Date().toLocaleString('es-CO')}
             </div>
 
             <div className="form-group">
-              <label htmlFor="logoFile">Logo (imagen o PDF) *</label>
-              <input
-                type="file"
-                id="logoFile"
-                name="logoFile"
-                accept="image/*,application/pdf"
-                onChange={handleLogoChange}
-                required={paymentMethod === 'wompi'}
-              />
-              {logoError && <p style={{ color: '#d9534f', marginTop: '8px' }}>{logoError}</p>}
-            </div>
-
-            <div className="form-group">
-              <label>Método de Pago *</label>
-              <div className="payment-options">
-                <label className="payment-option">
-                  <input
-                    type="radio"
-                    value="wompi"
-                    checked={paymentMethod === 'wompi'}
-                    onChange={(e) => setPaymentMethod(e.target.value)}
-                  />
-                  <span>💳 Wompi (Pasarela de pago)</span>
-                </label>
-
-                <label className="payment-option">
-                  <input
-                    type="radio"
-                    value="whatsapp"
-                    checked={paymentMethod === 'whatsapp'}
-                    onChange={(e) => setPaymentMethod(e.target.value)}
-                  />
-                  <span>💬 WhatsApp (Gestionar por chat)</span>
-                </label>
-              </div>
+              <label>Canal de Confirmación</label>
+              <p className="payment-info" style={{ marginTop: '8px' }}>
+                📱 Tu pedido se enviará por WhatsApp con todos los detalles del carrito.
+              </p>
             </div>
 
             <button
@@ -511,7 +237,7 @@ Fecha: ${new Date().toLocaleString('es-CO')}
               disabled={isProcessing}
               style={{ width: '100%', marginTop: '20px' }}
             >
-              {isProcessing ? 'Procesando...' : 'Completar Compra'}
+              {isProcessing ? 'Preparando mensaje...' : 'Enviar Pedido por WhatsApp'}
             </button>
           </form>
         </div>
@@ -524,6 +250,8 @@ Fecha: ${new Date().toLocaleString('es-CO')}
               <div key={item.id} className="summary-item">
                 <div>
                   <p className="item-name">{item.name}</p>
+                  <p className="item-qty">Tinta: {getInkLabel(item.inkType)}</p>
+                  <p className="item-qty">Papel: {item.selectedPaperLabel || item.paperType || 'No especificado'}</p>
                   <p className="item-qty">Cantidad: {item.quantity}</p>
                 </div>
                 <p className="item-price">
@@ -548,11 +276,7 @@ Fecha: ${new Date().toLocaleString('es-CO')}
             </div>
           </div>
 
-          <p className="payment-info">
-            {paymentMethod === 'wompi'
-              ? '🔒 Pago seguro con Wompi. Tus datos están protegidos.'
-              : '📱 Se abrirá WhatsApp para confirmar tu pedido.'}
-          </p>
+          <p className="payment-info">📱 Se abrirá WhatsApp con el resumen completo para confirmar tu pedido.</p>
         </div>
       </div>
       
@@ -562,7 +286,6 @@ Fecha: ${new Date().toLocaleString('es-CO')}
         isOpen={showPopupPermissionModal}
         onClose={() => setShowPopupPermissionModal(false)}
         onTestPopup={(allowed) => {
-          setPopupsAllowed(allowed);
           if (allowed) {
             setToastMessage('✅ ¡Popups habilitados correctamente!');
           }
@@ -575,23 +298,8 @@ Fecha: ${new Date().toLocaleString('es-CO')}
             <button className="modal-close" onClick={() => setShowWhatsAppWarning(false)}>×</button>
             <h3 style={{ color: '#ff6b35', marginBottom: '15px' }}>⚠️ Importante</h3>
             <p style={{ marginBottom: '20px', lineHeight: '1.6' }}>
-              Si seleccionas esta opción, <strong>debes enviar el comprobante de compra</strong> a través de WhatsApp.
+              Vas a enviar tu pedido por WhatsApp con tus datos y el detalle completo del carrito.
             </p>
-            <p style={{ marginBottom: '20px', fontWeight: '600' }}>
-              Puedes realizar tu pago a través de cualquiera de estos métodos:
-            </p>
-            <div style={{ marginBottom: '25px', textAlign: 'center' }}>
-              <img 
-                src="/pagos.png" 
-                alt="Métodos de pago" 
-                style={{ 
-                  maxWidth: '100%', 
-                  height: 'auto', 
-                  borderRadius: '10px',
-                  boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
-                }} 
-              />
-            </div>
             <div style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
               <button 
                 className="btn-secondary" 

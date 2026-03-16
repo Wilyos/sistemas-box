@@ -4,10 +4,16 @@ import './CategoriesShowcase.css';
 
 const categories = [
   { id: 'hamburguesa', label: 'Hamburguesas', emoji: '🍔', color: '#FF6B6B' },
+  { id: 'perros', label: 'Perros', emoji: '🌭', color: '#F39C12' },
   { id: 'pollo', label: 'Pollo', emoji: '🍗', color: '#FFD93D' },
   { id: 'asiatica', label: 'Asiática', emoji: '🥡', color: '#6BCB77' },
+  { id: 'mariscos', label: 'Mariscos', emoji: '🐟', color: '#4D96FF' },
+  { id: 'conos', label: 'Conos', emoji: '🍟', color: '#F4A261' },
+  { id: 'lechona', label: 'Lechona', emoji: '🥘', color: '#9B5DE5' },
+  { id: 'platos-arepas', label: 'Platos y Arepas', emoji: '🍽️', color: '#2A9D8F' },
+  { id: 'pizza', label: 'Pizza', emoji: '🍕', color: '#E76F51' },
   { id: 'postres', label: 'Postres', emoji: '🍩', color: '#D946EF' },
-  { id: 'otros', label: 'Otros', emoji: '📦', color: '#95A5A6' },
+  { id: 'cajas-contenedores', label: 'Cajas y Contenedores', emoji: '📦', color: '#95A5A6' },
 ];
 
 export default function CategoriesShowcase() {

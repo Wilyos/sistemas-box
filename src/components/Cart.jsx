@@ -173,7 +173,7 @@ export default function Cart() {
 
             <div className="cart-actions">
               <button className="btn" onClick={() => setShowCheckout(true)}>
-                Proceder al Pago
+                Finalizar por WhatsApp
               </button>
               <button
                 className="btn-secondary"
