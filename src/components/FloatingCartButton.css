@@ -24,7 +24,7 @@
 }
 
 .floating-cart-icon {
-  font-size: 26px;
+  font-size: 28px;
 }
 
 .floating-cart-badge {
@@ -48,11 +48,11 @@
   .floating-cart-button {
     right: 16px;
     bottom: 16px;
-    width: 52px;
-    height: 52px;
+    width: 60px;
+    height: 60px;
   }
 
   .floating-cart-icon {
-    font-size: 22px;
+    font-size: 28px;
   }
 }

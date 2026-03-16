@@ -6,9 +6,9 @@ import ProductCard from './ProductCard';
 import ProductModal from './ProductModal';
 import CategoryFilter from './CategoryFilter';
 import products from '../data/products.json';
-import Header from './Header';
 import Footer from './Footer';
 import Cart from './Cart';
+import FloatingCartButton from './FloatingCartButton';
 import './ProductsPage.css';
 
 export default function ProductsPage() {
@@ -115,8 +115,8 @@ export default function ProductsPage() {
 
   return (
     <>
-      <Header />
       <Cart />
+      <FloatingCartButton />
       
       <section id="productos" className="products-section products-page">
         <div className="products-page-header">

@@ -1,4 +1,5 @@
 import { useCart } from '../hooks/useCart';
+import { FaShoppingCart } from 'react-icons/fa';
 import './FloatingCartButton.css';
 
 export default function FloatingCartButton() {
@@ -15,7 +16,7 @@ export default function FloatingCartButton() {
       onClick={handleClick}
       aria-label="Abrir carrito de compras"
     >
-      <span className="floating-cart-icon">🛒</span>
+      <FaShoppingCart className="floating-cart-icon" />
       {totalItems > 0 && (
         <span className="floating-cart-badge">{totalItems}</span>
       )}

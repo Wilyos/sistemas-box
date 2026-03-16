@@ -537,9 +537,12 @@ p {
 footer { 
   text-align: center; 
   padding: var(--space-xl); /* 55px - Fibonacci */
-  background: white; 
   margin-top: var(--space-2xl); /* 89px - Fibonacci */
   border-top: var(--space-xs) solid var(--secondary); /* 8px - Fibonacci */
+  background-image: url('/bg2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Media Queries */

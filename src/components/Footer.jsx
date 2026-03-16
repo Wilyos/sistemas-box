@@ -52,7 +52,7 @@ export default function Footer() {
 
           <div className="footer-right">
             <img 
-              src="/boxfooter.png" 
+              src="/footer.png" 
               alt="Productos empaque" 
               className="footer-image"
             />
