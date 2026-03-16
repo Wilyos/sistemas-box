@@ -11,10 +11,33 @@ import Cart from './Cart';
 import FloatingCartButton from './FloatingCartButton';
 import './ProductsPage.css';
 
+const CATEGORY_ALIAS = {
+  perro: 'perros',
+  otros: 'cajas-contenedores',
+};
+
+const inferCategoryFromName = (name = '') => {
+  const n = name.toLowerCase();
+  if (/perro|salchipapas/.test(n)) return 'perros';
+  if (/cono|porta papas|papas mesa/.test(n)) return 'conos';
+  if (/lechona/.test(n)) return 'lechona';
+  if (/pizza/.test(n)) return 'pizza';
+  if (/^plato\b|^plato |porta arepas/.test(n)) return 'platos-arepas';
+  return 'cajas-contenedores';
+};
+
+const normalizeCategory = (item) => {
+  const mapped = CATEGORY_ALIAS[item.category] || item.category;
+  return {
+    ...item,
+    category: mapped || inferCategoryFromName(item.name),
+  };
+};
+
 export default function ProductsPage() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [visibleProducts, setVisibleProducts] = useState({});
-  const [items, setItems] = useState(products);
+  const [items, setItems] = useState(products.map(normalizeCategory));
   const [isLoading, setIsLoading] = useState(true);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('todos');
@@ -39,23 +62,23 @@ export default function ProductsPage() {
         
         if (productsData.length === 0) {
           // Si no hay productos en Firestore, usar los del JSON
-          setItems(products);
+          setItems(products.map(normalizeCategory));
           console.log('[ProductsPage] Usando JSON local, sin documentos en Firestore');
         } else {
           // Ordenar por ID para mantener consistencia
-          setItems(productsData.sort((a, b) => a.id - b.id));
+          setItems(productsData.map(normalizeCategory).sort((a, b) => a.id - b.id));
         }
         console.log('[ProductsPage] items cargados:', productsData.length || products.length);
         setIsLoading(false);
       } catch (error) {
         console.error('Error loading products:', error);
-        setItems(products);
+        setItems(products.map(normalizeCategory));
         console.log('[ProductsPage] Fallback a JSON por error de carga');
         setIsLoading(false);
       }
     }, (error) => {
       console.error('Error setting up listener:', error);
-      setItems(products);
+      setItems(products.map(normalizeCategory));
       console.log('[ProductsPage] Fallback a JSON por error en listener');
       setIsLoading(false);
     });

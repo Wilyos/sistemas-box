@@ -92,20 +92,25 @@
   gap: var(--space-sm); /* 13px - Fibonacci */
   align-items: center;
   padding: var(--space-md); /* 21px - Fibonacci */
-  background: var(--light);
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbf8 100%);
   border-radius: var(--space-sm); /* 13px - Fibonacci */
+  border: 1px solid rgba(66, 158, 82, 0.25);
+  box-shadow: 0 8px 16px rgba(26, 64, 32, 0.08);
   font-size: var(--font-sm); /* 14px */
 }
 
 .cart-item-info h4 {
   margin: 0 0 var(--space-xs) 0; /* 8px - Fibonacci */
   font-size: var(--font-base); /* 16px */
+  color: var(--dark);
+  font-weight: 700;
 }
 
 .cart-item-price {
   color: var(--primary);
   font-weight: bold;
   margin: 0;
+  font-size: var(--font-base);
 }
 
 .cart-item-controls {
@@ -114,7 +119,8 @@
   gap: var(--space-xs); /* 8px - Fibonacci */
   background: white;
   border-radius: var(--space-xs); /* 8px - Fibonacci */
-  border: 1px solid #ddd;
+  border: 1px solid rgba(66, 158, 82, 0.3);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
 }
 
 .qty-btn {
@@ -125,6 +131,7 @@
   padding: var(--space-xs); /* 8px - Fibonacci */
   color: var(--primary);
   font-weight: bold;
+  border-radius: 6px;
 }
 
 .qty-btn:hover {
@@ -141,11 +148,13 @@
   text-align: right;
   font-weight: bold;
   min-width: 60px;
+  color: var(--dark);
 }
 
 .remove-btn {
-  background: none;
-  border: none;
+  background: #fff;
+  border: 1px solid #f1c7c7;
+  border-radius: 8px;
   cursor: pointer;
   font-size: var(--font-base); /* 16px */
   padding: var(--space-xs); /* 8px - Fibonacci */
@@ -153,6 +162,8 @@
 
 .remove-btn:hover {
   color: red;
+  border-color: #e89696;
+  background: #fff5f5;
 }
 
 .cart-summary {
